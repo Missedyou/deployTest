@@ -7,7 +7,7 @@ def deploy():
     add.wait()
     print('add over')
     
-    commit_content = sys.argv[1]
+    commit_content = str(sys.argv[1])
 
     commit = subprocess.Popen("git commit -m %s"%commit_content, shell=True)
     commit.wait()
