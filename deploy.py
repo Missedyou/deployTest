@@ -1,12 +1,15 @@
 # -*- coding:utf-
 import subprocess
+import sys, os
 
 def deploy():
     add = subprocess.Popen("git add .", shell=True)
     add.wait()
     print('add over')
-    content = '格式化字符串测试'
-    commit = subprocess.Popen("git commit -m %s"%content, shell=True)
+    
+    commit_content = sys.argv[1]
+
+    commit = subprocess.Popen("git commit -m %s"%commit_content, shell=True)
     commit.wait()
     print('commit over')
 
